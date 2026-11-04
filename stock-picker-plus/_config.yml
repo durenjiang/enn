@@ -1,0 +1,33 @@
+# GitHub Pages Configuration
+
+title: Stock Picker Plus
+description: A股智能选股系统 - 多因子策略 + 三维评分 + 自动推送
+author: striferxu
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# 导航
+navigation:
+  - title: 首页
+    url: /
+  - title: 文档
+    url: /docs/
+  - title: GitHub
+    url: https://github.com/striferxu/stock-picker-plus
+
+# 排除
+exclude:
+  - "*.py"
+  - "*.yml"
+  - "*.yaml"
+  - "node_modules/"
+  - "venv/"
+  - ".venv/"
+  - "data/"
+  - "logs/"
+  - "reports/"
+  - "notebooks/"
+  - ".clawhub/"
+  - ".openclaw/"
