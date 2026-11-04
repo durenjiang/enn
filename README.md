@@ -33,6 +33,12 @@ A股量化项目集合仓库（monorepo）。聚合基于 **akshare / baostock**
 ## 使用
 各子项目独立运行，详见各自目录内的 README。
 
+## 发布与下载
+- **公网打包下载（推荐机器人/本机直链）**：`https://raw.githubusercontent.com/durenjiang/enn/main/dist/enn-ashare-tools-20261104.tar.gz`
+  - 7.0 MB / 1677 文件，解压即用；Content-Type 为 `application/octet-stream`，浏览器与脚本均可直接下载。
+  - 本地镜像：`D:/工作台/游资体系总工作台/工作区-量化/军团共享数据池/技能与工具仓库/A股量化工具集/enn-ashare-tools-20261104.tar.gz`
+- GitHub Release API 在本环境被网络代理拦截，故采用 `dist/` 目录 + raw 直链方式分发，等效于可下载发布物。
+
 ## 归档记录
 - 2026-11-04（第一批）：sequoia-x（akshare+baostock）、stock-picker-plus（baostock）、a-stock-short-term-backtest（akshare）。
 - 2026-11-04（第二批）：daily_stock_analysis（AI 分析）、a-stock-data（数据接口 skill）、tickflow-stock-panel（回测工作台）。
