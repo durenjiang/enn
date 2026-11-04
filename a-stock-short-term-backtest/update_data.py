@@ -25,7 +25,7 @@ DATA_DIR = os.path.join(BASE, "backtest_data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 START = "20250901"
-END = "20260912"
+END = "20261104"  # 临时改为运行日，便于取当天收盘（原仓库写死 20260912）
 NUM_WORKERS = 4
 
 def log(msg):
