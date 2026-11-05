@@ -15,7 +15,7 @@
 - 共享技能库：`D:\工作台\游资体系总工作台\工作区-量化\军团共享数据池\技能与工具仓库\A股量化工具集\`
 - 上游仓库：`https://github.com/xbtlin/ai-berkshire`（MIT）
 - 游资线 Windows 适配脚本：`D:\工作台\游资体系总工作台\知识库收集区\共享工具区\游资\ashare_data_win.py`
-- 公网整包（**9 款全量**）：`https://raw.githubusercontent.com/durenjiang/enn/main/dist/enn-ashare-tools-20261105-v2.tar.gz`（11.3MB / 3069 文件；旧版 8 款包 `...-20261105.tar.gz` 保留供回溯）
+- 公网整包（**9 款精简源码包**，不含 145MB 历史研报与演示动图）：`https://raw.githubusercontent.com/durenjiang/enn/main/dist/enn-ashare-tools-20261105-v2.tar.gz`（11.3MB / 3069 文件；旧版 8 款包 `...-20261105.tar.gz` 保留供回溯）
 
 **随句必带的三句护栏**：① 不是买卖信号源，VETO 未解除只出观察档、不打；② 作者自报收益 +69.29%/+66.38% 未经审计，禁止进战报；③ 【模拟】· 不构成投资建议。
 
