@@ -1,0 +1,161 @@
+{
+  "name": "A股量化工具集",
+  "version": "v2026-11-05",
+  "published_by": "军师(个人量化) 首发 + 游资线 2026-11-05 增补",
+  "published_date": "2026-11-05",
+  "upstream_monorepo": "https://github.com/durenjiang/enn",
+  "local_tarball": "军团共享数据池/技能与工具仓库/A股量化工具集/enn-ashare-tools-20261105.tar.gz",
+  "local_mirror": "D:/工作台/2026-10-28-01-23-25/_enn_stage/enn/",
+  "data_integrity": "全部使用真实行情接口(akshare/baostock/新浪)，禁止编造",
+  "tools": [
+    {
+      "key": "a-stock-data",
+      "name": "A股公开数据接口清单",
+      "category": "数据获取",
+      "upstream": "simonlin1212/a-stock-data",
+      "data_source": "新浪/东财/同花顺等多源",
+      "entry": "a-stock-data/SKILL.md",
+      "standalone_files": [
+        "a-stock-data_接口清单_SKILL.md"
+      ],
+      "deps": [],
+      "runtime_dep": "无(纯文档/提示词)",
+      "scenario": "让AI自查查某类A股数据该调哪个接口；配合akshare",
+      "note": "零运行时依赖，本通道已另存单文件"
+    },
+    {
+      "key": "sequoia-x",
+      "name": "A股自动选股系统(多策略+飞书推送)",
+      "category": "选股/推送",
+      "upstream": "sngyai/Sequoia-X",
+      "data_source": "akshare + baostock",
+      "entry": "sequoia-x/main.py",
+      "deps": [
+        "akshare>=1.10",
+        "baostock>=0.9",
+        "pydantic-settings",
+        "python-dotenv",
+        "rich",
+        "pandas",
+        "requests"
+      ],
+      "runtime_dep": "pip install akshare baostock",
+      "scenario": "每日自动选股+多渠道推送；策略可扩展",
+      "note": "7+策略；飞书推送需配 webhook"
+    },
+    {
+      "key": "stock-picker-plus",
+      "name": "智能选股系统(多因子三维评分+回测)",
+      "category": "选股/回测",
+      "upstream": "striferxu/stock-picker-plus",
+      "data_source": "baostock",
+      "entry": "stock-picker-plus/main.py",
+      "deps": [
+        "baostock",
+        "pandas",
+        "numpy"
+      ],
+      "runtime_dep": "pip install baostock",
+      "scenario": "多因子(基本面/技术面/情绪面)打分选股+回测",
+      "note": "双格式输出(Excel/QQ推送)"
+    },
+    {
+      "key": "a-stock-short-term-backtest",
+      "name": "A股短线策略回测(28策略共振)",
+      "category": "选股/回测",
+      "upstream": "Leq2468/a-stock-short-term-backtest",
+      "data_source": "akshare(新浪)",
+      "entry": "a-stock-short-term-backtest/daily_signal.py",
+      "deps": [
+        "akshare",
+        "pandas",
+        "numpy"
+      ],
+      "runtime_dep": "pip install akshare",
+      "scenario": "短线多策略共振选股；快速验证某日信号",
+      "note": "update_data.py 的 END 硬编码需改成当日；2026-11-04收盘共振即用此跑通",
+      "known_issue": "END 写死(原20260912)，跑真实收盘必须先改成当日"
+    },
+    {
+      "key": "daily_stock_analysis",
+      "name": "AI值班研究员(每日分析+推送)",
+      "category": "AI分析",
+      "upstream": "zhulinsen/daily_stock_analysis",
+      "data_source": "akshare + LLM API",
+      "entry": "daily_stock_analysis/main.py | server.py | webui.py",
+      "deps": [
+        "akshare",
+        "openai-compatible-llm-api",
+        "fastapi",
+        "requests"
+      ],
+      "runtime_dep": "pip install akshare + 自备LLM API key",
+      "scenario": "每日自动化AI分析+评分决策+多渠道推送",
+      "note": "归档时剔docs/tests；15种策略视角；需LLM key",
+      "archived_files": 777
+    },
+    {
+      "key": "tickflow-stock-panel",
+      "name": "本地A股量化工作台(20策略+真实交易成本回测)",
+      "category": "回测/实盘工作台",
+      "upstream": "shy3130/tickflow-stock-panel",
+      "data_source": "akshare / tushare",
+      "entry": "backend/app | frontend | mcp-server",
+      "deps": [
+        "python(backend)",
+        "node(frontend)"
+      ],
+      "runtime_dep": "pip install -r backend/requirements.txt; npm i (frontend)",
+      "scenario": "验证游资策略在真实交易成本(T+1/手续费/滑点)下是否仍盈利；mcp-server接AI",
+      "note": "归档时剔backend/tests/brand/screenshots/assets；含mcp-server",
+      "archived_files": 798
+    },
+    {
+      "key": "UZI-Skill",
+      "name": "个股深研 22维+66大佬评审(含龙虎榜/杀猪盘)",
+      "category": "排雷/龙虎榜/单票深研",
+      "upstream": "wbh604/UZI-Skill",
+      "data_source": "akshare/东财/新浪/腾讯(实时拉取,无需API key)",
+      "entry": "UZI-Skill/SKILL.md",
+      "sub_skills": [
+        "deep-analysis",
+        "investor-panel",
+        "lhb-analyzer",
+        "trap-detector"
+      ],
+      "deps": [
+        "见 UZI-Skill/requirements.txt"
+      ],
+      "runtime_dep": "Python 环境 + pip 依赖",
+      "scenario": "游资席位识别/机构vs游资/同板块辨识度龙头；杀猪盘8信号排雷；单票22维深研",
+      "note": "SKILL.md 自带 Do not invent numbers；龙虎榜须守 T+1 口径；investor-panel 只作叙事素材不作信号；未本地实跑",
+      "local_path": "知识库收集区/共享工具区/游资/游资-GitHub四工具技能卡_v1.0_20261105.md"
+    },
+    {
+      "key": "PanWatch",
+      "name": "盯盘侠 自托管盯盘工作台",
+      "category": "盯盘/提醒/执行纪律",
+      "upstream": "TNT-Likely/PanWatch",
+      "data_source": "本地 SQLite + 多市场行情(自托管)",
+      "entry": "PanWatch/README.zh-CN.md",
+      "deps": [
+        "见 PanWatch/requirements*.txt / Dockerfile / frontend"
+      ],
+      "runtime_dep": "Docker 或 Python+Node 服务栈，AI 深度分析需 LLM Key",
+      "scenario": "后台盯盘(自动刷新最少10s)、价格/量比提醒规则、机会页候选7字段(策略来源/入场/目标/止损/失效/归因/历史胜率)",
+      "note": "4 agent(盘前分析/收盘复盘/盘中监测/TradingAgents)；仅收录+静态阅读，未本地实跑；只作观察档跟踪"
+    }
+  ],
+  "tool_count": 8,
+  "increment_20261105": {
+    "by": "游资线",
+    "source": "工作区-游资/临时任务/ 23张微信截图",
+    "added": [
+      "UZI-Skill",
+      "PanWatch"
+    ],
+    "intel_doc": "情报吸收-GitHub四大炒股工具-20261105-游资.md",
+    "skill_card": "游资-GitHub四工具技能卡_v1.0_20261105.md",
+    "note": "两款源码仅收录+静态阅读，未本地实跑；密钥/调试残留扫描0命中"
+  }
+}
