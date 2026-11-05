@@ -100,7 +100,8 @@ related_docs:
 
 - 本次仅完成 **源码收录 + 静态阅读（README / SKILL.md）+ 密钥扫描**，**UZI-Skill / PanWatch 均未本地实跑**。
 - PanWatch 服务栈较重（Docker / Node / LLM key），UZI 需 Python 依赖；共享层只给源码，**不承诺开箱即跑**。
-- 文章提名但未给链接的 AI Berkshire / Vibe-Trading / go-stock / TradingAgents：**只记线索，不落地**。
+- 文章提名但未给链接的 Vibe-Trading / go-stock / TradingAgents：**只记线索，不落地**。
+- **【18:20 二次增补·修订】AI Berkshire 已查证收录**（`xbtlin/ai-berkshire`，MIT / 22 skills / 共享库第 9 款），专项文档见同目录《AI-Berkshire-查证与游资用法-20261105.md》；要点：**8 条快速否决清单（禁「别人都在买/最近涨得好」追高、禁博傻）+ 镜子测试 5 句话说不清＝不买 + 灰色地带留白** → A1–A7 风控铁闸与 K-07 可信度三态；`financial_rigor.py` 双源校验 / `report_audit.py` 15% 抽检 / `ashare_data_win.py` 腾讯行情（本机实测跑通）→ 禁编造闸门与盘前备用通道；**不是信号源**，四大师结论与自报收益不得进战报。
 - 完整转写与裁决见同目录《情报吸收-GitHub四大炒股工具-20261105-游资.md》。
 
 ---

@@ -1,10 +1,10 @@
 {
   "name": "A股量化工具集",
-  "version": "v2026-11-05",
+  "version": "v2026-11-05b",
   "published_by": "军师(个人量化) 首发 + 游资线 2026-11-05 增补",
   "published_date": "2026-11-05",
   "upstream_monorepo": "https://github.com/durenjiang/enn",
-  "local_tarball": "军团共享数据池/技能与工具仓库/A股量化工具集/enn-ashare-tools-20261105.tar.gz",
+  "local_tarball": "军团共享数据池/技能与工具仓库/A股量化工具集/enn-ashare-tools-20261105-v2.tar.gz",
   "local_mirror": "D:/工作台/2026-10-28-01-23-25/_enn_stage/enn/",
   "data_integrity": "全部使用真实行情接口(akshare/baostock/新浪)，禁止编造",
   "tools": [
@@ -144,9 +144,33 @@
       "runtime_dep": "Docker 或 Python+Node 服务栈，AI 深度分析需 LLM Key",
       "scenario": "后台盯盘(自动刷新最少10s)、价格/量比提醒规则、机会页候选7字段(策略来源/入场/目标/止损/失效/归因/历史胜率)",
       "note": "4 agent(盘前分析/收盘复盘/盘中监测/TradingAgents)；仅收录+静态阅读，未本地实跑；只作观察档跟踪"
+    },
+    {
+      "key": "ai-berkshire",
+      "name": "AI 时代的伯克希尔 · 价值投资投研 Skill 合集(22 skills)",
+      "category": "研究纪律/反偏见/数据校验/备用行情",
+      "upstream": "xbtlin/ai-berkshire",
+      "license": "MIT",
+      "entry": "ai-berkshire/README.md；本线查证 AI-Berkshire-查证与游资用法-20261105.md",
+      "sub_skills": [
+        "investment-checklist(8条快速否决+镜子测试)",
+        "investment-team(4 Agent 对抗)",
+        "news-pulse(±5%异动归因)",
+        "quality-screen(7条去劣)",
+        "industry-funnel"
+      ],
+      "deps": [
+        "零依赖 stdlib 脚本：tools/financial_rigor.py",
+        "tools/report_audit.py",
+        "tools/ashare_data_win.py(游资线 Windows 适配)"
+      ],
+      "runtime_dep": "完整 22 skill 需 Claude Code / Codex + LLM Key（本线不安装）",
+      "scenario": "双源交叉校验、报告落盘前15%抽检、盘前备用行情(腾讯qt.gtimg.cn直连，带换手/流通市值/PE/PB)、禁止追高的一票否决清单",
+      "note": "不是买卖信号源；作者自报 +69.29%/+66.38% 未审计禁止进战报；momentum_backtest 为美股硬编码、stock_screener A股未实现，均不得当A股回测/选股器",
+      "local_path": "知识库收集区/共享工具区/游资/AI-Berkshire-查证与游资用法-20261105.md"
     }
   ],
-  "tool_count": 8,
+  "tool_count": 9,
   "increment_20261105": {
     "by": "游资线",
     "source": "工作区-游资/临时任务/ 23张微信截图",
@@ -157,5 +181,22 @@
     "intel_doc": "情报吸收-GitHub四大炒股工具-20261105-游资.md",
     "skill_card": "游资-GitHub四工具技能卡_v1.0_20261105.md",
     "note": "两款源码仅收录+静态阅读，未本地实跑；密钥/调试残留扫描0命中"
-  }
+  },
+  "increment_20261105b": {
+    "by": "游资线",
+    "trigger": "总指挥专项指令：研究 AI Berkshire",
+    "added": [
+      "ai-berkshire"
+    ],
+    "tool_count": 9,
+    "verified_source": "github.com/xbtlin/ai-berkshire (MIT, main 22 skills)",
+    "doc": "AI-Berkshire-查证与游资用法-20261105.md",
+    "local_tested": [
+      "tools/financial_rigor.py 双源校验 通过",
+      "tools/report_audit.py 对本线战报抽检 通过",
+      "ashare_data_win.py 腾讯行情 Windows 适配后 通过"
+    ],
+    "note": "仅收录框架层(1.2MB/113文件)，reports 145MB 与 assets 17MB 未收录；未装 Claude Code/Codex，22 skill 未实跑；密钥扫描 0 命中"
+  },
+  "public_tarball": "https://raw.githubusercontent.com/durenjiang/enn/main/dist/enn-ashare-tools-20261105-v2.tar.gz"
 }
