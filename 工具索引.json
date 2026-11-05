@@ -1,6 +1,6 @@
 {
   "name": "A股量化工具集",
-  "version": "v2026-11-05b",
+  "version": "v2026-11-05c",
   "published_by": "军师(个人量化) 首发 + 游资线 2026-11-05 增补",
   "published_date": "2026-11-05",
   "upstream_monorepo": "https://github.com/durenjiang/enn",
@@ -198,5 +198,23 @@
     ],
     "note": "仅收录框架层(1.2MB/113文件)，reports 145MB 与 assets 17MB 未收录；未装 Claude Code/Codex，22 skill 未实跑；密钥扫描 0 命中"
   },
-  "public_tarball": "https://raw.githubusercontent.com/durenjiang/enn/main/dist/enn-ashare-tools-20261105-v2.tar.gz"
+  "public_tarball": "https://raw.githubusercontent.com/durenjiang/enn/main/dist/enn-ashare-tools-20261105-v2.tar.gz",
+  "youzi_skill": {
+    "name": "youzi-tool-playbook",
+    "version": "v1.0.0",
+    "kind": "WorkBuddy 可加载技能（非第10款工具）",
+    "path": "A股量化工具集/youzi-tool-playbook/SKILL.md",
+    "user_level_path": "~/.workbuddy/skills/youzi-tool-playbook/",
+    "tarball": "enn/dist/youzi-tool-playbook-v1.0.0.tar.gz",
+    "commands": [
+      "selftest",
+      "quote",
+      "verify",
+      "audit",
+      "guard",
+      "routes"
+    ],
+    "selftest": "3/3 PASS (2026-11-05)",
+    "note": "把9款工具的用法内化为四道质检闸；不修改友军技能"
+  }
 }
